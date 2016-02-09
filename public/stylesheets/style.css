@@ -1,0 +1,61 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+@media screen and (min-width: 768px){
+  #signupForm {
+    margin-top: 100px;
+  }
+}
+
+#landingPagePic {
+  margin-top: 100px;
+}
+
+.test {
+  border: red dotted 1px;
+}
+.pullRight{
+  float:right;
+}
+
+.textLeft {
+  text-align: right;
+}
+
+table{
+  width: 100%;
+}
+
+.padRight {
+  margin-right: 7px;
+  margin-bottom: 3px;
+}
+.innerInfoBox {
+  padding-left:5px;
+  padding-bottom: 10px;
+  margin: 10px auto;
+  background-color: lightgrey;
+  width:80%;
+  height:80%;
+}
+.innerInfoBox h3 {
+  padding-top: 5px;
+  text-align: center;
+}
+.noPadding {
+  padding:0;
+}
+.centerText {
+  text-align: center;
+  padding: 3px;
+  border: white solid 2px;
+}
+/*.centerText>button{
+  display:block;
+}*/

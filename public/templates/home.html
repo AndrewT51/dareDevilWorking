@@ -1,0 +1,31 @@
+<!-- <div class="container"> -->
+  <div class="row">
+    <div class="visible-sm visible-md visible-lg visible-xl col-sm-6">
+      <img id="landingPagePic" src="http://www.ecurtisdesigns.com/wp-content/uploads/2013/07/social-media-world.jpg" alt="People holding hands around the world">
+    </div>
+    <div class="col-xs-12 col-sm-6">
+     <form id="signupForm" ng-submit="submit()" name="detailsForm">
+       <fieldset class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" placeholder="Username" ng-model="username" required="true">
+      </fieldset>
+      <fieldset class="form-group" ng-show="!memberStatus">
+        <label for="fullname">Full name</label>
+        <input type="text" class="form-control" id="fullname" placeholder="Full name" ng-model="fullname" >
+      </fieldset>
+      <fieldset class="form-group" ng-show="!memberStatus">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="Email address" ng-model="email" >
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" ng-model="password" required="true">
+      </fieldset>
+      <input type="submit" class="btn btn-primary" value="Sign up" ng-hide="memberStatus">
+      <input type="submit" class="btn btn-primary" value="Sign in" ng-hide="!memberStatus">
+      <a class="btn btn-primary" ng-click="memberStatus=!memberStatus" ng-hide="memberStatus">I have an account</a>
+      <a class="btn btn-primary" ng-click="memberStatus=!memberStatus" ng-hide="!memberStatus">I need to sign up</a>
+    </form> 
+  </div>
+</div>
+<!-- </div> -->

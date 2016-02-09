@@ -1,0 +1,24 @@
+{
+  "name": "dare-devil",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Andrew Trigg <andrewt51@hotmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/AndrewT51/dareDevil",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.0",
+    "angular-ui-router": "~0.2.18",
+    "bootstrap": "~3.3.6"
+  }
+}

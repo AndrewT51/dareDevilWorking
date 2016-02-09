@@ -1,0 +1,20 @@
+<div class="infoBox">
+  <div class="innerInfoBox noPadding">
+   
+    <input type="text" class="form-control" id="username" placeholder="Enter username" ng-model="searchTerm" required="true">
+    
+    <button class="form-control" ng-click="search(searchTerm)">Search</button>
+  </div>
+</div>
+<div>
+  <div class="innerInfoBox noPadding">
+    <table>
+      <div class="centerText" ng-repeat="person in people">
+        <h3>{{person.username}}</h3>
+        <p>{{person.fullname.join(' ')}}</p>
+        <h5>{{person.email}}</h5>
+        <button class="btn btn-success" ng-click="addFriend(person,$index)" >Friend me</button>
+      </div>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="infoBox">
+  <div class="innerInfoBox">
+    <h3>Your details</h3>
+    <table>
+      <tr>
+        <td class="col-xs-8" ng-if="!usernameEdit">{{myLocalDetails.username}}</td>
+        <td ng-if="usernameEdit"><input type="text" value="{{myLocalDetails.username}}" ng-model="myLocalDetails.username"></td>
+        <td class="textLeft">
+          <button ng-hide="!usernameEdit" class="btn btn-default padRight" ng-click="changeUsername()">Save</button>
+          <button ng-hide="usernameEdit" class="btn btn-default padRight" ng-click="usernameEdit=!usernameEdit">Edit</button>
+        </td>
+      </tr>
+      <tr>
+        <td class="col-xs-8" ng-if="!nameEdit">{{myLocalDetails.fullname}}</td>
+        <td ng-if="nameEdit"><input type="text" value="{{myLocalDetails.fullname}}" ng-model="myLocalDetails.fullname"></td>
+        <td class="textLeft">
+          <button ng-hide="!nameEdit" class="btn btn-default padRight" ng-click="changeFullname()">Save</button>
+          <button ng-hide="nameEdit" class="btn btn-default padRight" ng-click="nameEdit=!nameEdit">Edit</button>
+        </td>
+      </tr>
+      <tr>
+        <td class="col-xs-8" ng-if="!emailEdit">{{myLocalDetails.email}}</td>
+        <td ng-if="emailEdit"><input type="text" value="{{myLocalDetails.email}}" ng-model="myLocalDetails.email"></td>
+        <td class="textLeft">
+         <button ng-hide="!emailEdit" class="btn btn-default padRight" ng-click="changeEmail(newEmail)">Save</button>
+         <button ng-hide="emailEdit" class="btn btn-default padRight" ng-click="emailEdit=!emailEdit">Edit</button>
+       </td>
+     </tr>
+   </table>
+ </div>
+
+ <div class="innerInfoBox">
+  <h3>Your friends</h3>
+    
+  <table>
+    <tr ng-repeat="friend in myLocalDetails.friends">
+      <td>{{friend.username}}</td>
+      <td class="textLeft">
+        <button class="btn btn-danger padRight" ng-click="unfriend(friend,$index)">Unfriend</button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+</div>
