@@ -8,6 +8,13 @@ myApp.controller('searchCtrl',function($scope,usrSvc,store){
     }
   })
 
+  var searchInput = document.querySelector('#username');
+  searchInput.addEventListener("keyup",function(e){
+    var keyCode = e.keyCode || e.which;
+    if (keyCode == 13){
+      angular.element(document.querySelector('#searchBtn').click())
+    }
+  })
 
   $scope.search = function(searchterm){
     usrSvc.getUsers(searchterm)

@@ -49,15 +49,15 @@ router.post('/signin', function(req,res){
 // has a valid JWT. Then returns the logged on users details
 router.get('/mydetails/:id',auth, function(req,res){
   User.findById(req.params.id)
-    .populate('friends')
-    .exec(function(err,user){
-      if(err){
-        res.send(err)
-      }else{
-        res.send(user)  
-      }
-      
-    })
+  .populate('friends')
+  .exec(function(err,user){
+    if(err){
+      res.send(err)
+    }else{
+      res.send(user)  
+    }
+    
+  })
 
 })
 
@@ -78,16 +78,14 @@ router.get('/members/:name', function(req,res){
 // This route will return all the users in the database after filtering out your own
 // details
 router.get('/allUsers/:ownId',function(req,res){
-  // User.findById(req.params.ownId, function(err, mainUser){
-    User.find({}, function(err, users){
-      var ownNameRemoved =users.filter(function(user){
-        // var userId = user._id;
-        if(user._id != req.params.ownId){
-          // if(mainUser.friends.indexOf(userId)){
-            if(user.friends.indexOf(req.params.ownId))
-            return user;
+  User.find({}, function(err, users){
+    var ownNameRemoved =users.filter(function(user){
+      if(user._id != req.params.ownId){
+        if(user.friends.indexOf(req.params.ownId) < 0){
+          return user;
         }
-      })
+      }
+    })
     res.send(ownNameRemoved)
   })
 })
@@ -138,7 +136,7 @@ router.put('/addFriend/:id', function(req,res){
   })
 })
 
- router.put('/unfriend/:id/:friend', function(req,res){
+router.put('/unfriend/:id/:friend', function(req,res){
   User.findById(req.params.id, function(err, user){
     User.findById(req.params.friend, function(err, friend){
       var indexToDelete = user.friends.indexOf(req.params.friend);
