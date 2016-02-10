@@ -32,7 +32,7 @@ myApp.controller('searchCtrl',function($scope,usrSvc,store){
     if(users){
       $scope.people = users.data  
     }
-   $scope.people.push(person)
+   // $scope.people.push(person)
   })
  })
 

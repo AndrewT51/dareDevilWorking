@@ -12,7 +12,6 @@ router.get('/', function(req, res, next) {
 // This is the initial signing up and creation of new user in the database
 
 router.post('/signup', function(req,res){
-  console.log(req.body)
   var user = new User();
   user.username= req.body.username;
   user.email= req.body.email;
@@ -56,7 +55,7 @@ router.get('/mydetails/:id',auth, function(req,res){
     }else{
       res.send(user)  
     }
-    
+
   })
 
 })
