@@ -38,8 +38,7 @@ User.methods.generateJWT = function(){
     _id: this._id,
     username: this.username,
     exp: parseInt(exp.getTime()/1000)
-  }, "secret");
+  }, process.env.JWT_SECRET);
 };
-// process.env.JWT_SECRET
 module.exports = mongoose.model('User',User);
 
